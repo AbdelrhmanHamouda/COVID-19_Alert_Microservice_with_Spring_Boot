@@ -87,3 +87,10 @@ logging:
   level:
     com.nexthink.mnt.covidalertservice.service: DEBUG
 ```
+
+
+#### Aiding materials  
+
+This video sires was very helpful while implmenting this.
+Title: COVID-19 Alert Microservice with Spring Boot 
+https://www.youtube.com/watch?v=g8C0Z-seFEw&feature=youtu.be
