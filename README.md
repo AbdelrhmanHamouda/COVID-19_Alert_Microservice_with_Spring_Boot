@@ -101,3 +101,8 @@ https://www.youtube.com/watch?v=g8C0Z-seFEw&feature=youtu.be
 ```shell
 ./gradlew clean build
 ```
+
+# Running the service
+```shell
+java -jar <RepoPath>/build/libs/covidAlertService-0.0.1-SNAPSHOT.jar
+```
