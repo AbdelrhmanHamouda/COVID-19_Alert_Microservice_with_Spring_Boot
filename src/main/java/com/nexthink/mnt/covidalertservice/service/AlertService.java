@@ -13,12 +13,22 @@ public class AlertService {
     @Autowired
     private Covid19DataProvider covid19DataProvider;
 
-    public AlertStatus getAlertAboutState(String country, String state) throws ParserException {
+    public AlertStatus getAlertAboutState(String country, String state, String date) throws ParserException {
         // Create an alertStatus object
         AlertStatus alertStatus = new AlertStatus();
+        // Init neededData
+        String neededData;
 
         // Get the country & state data
-        String neededData = covid19DataProvider.getCountryAndStateData(country, state, "today_new_confirmed");
+        try {
+            neededData = covid19DataProvider.getCountryAndStateData(country, state, "today_new_confirmed", date);
+        } catch (Exception e) {
+            System.out.println("ERROR message:");
+            e.printStackTrace();
+            alertStatus.setAlertLevel("{\"ERROR\": Something went wrong. Please review logs.}");
+            return alertStatus;
+        }
+
 
         if (Integer.parseInt(neededData) < 1000) {
             alertStatus.setAlertLevel("GREEN");
