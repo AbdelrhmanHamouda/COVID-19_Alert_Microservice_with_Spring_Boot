@@ -6,8 +6,9 @@ The current implementation allows providing a ```country``` name and a ```state`
 - Port: 9090
 - Endpoint: ```/status/```
 - Request: GET
-- Path variables: ```/{country}/{state} ```  
-####Usage example
+- Path variables: ```/{country}/{state} ```     
+
+###Usage example
 http://localhost:9090/status/Germany/Berlin
 
 # Data source
@@ -19,4 +20,4 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
 ```
 
 # Basic Microservice Architecture
-// Digrame to be added! 
+// Diagram to be added! 
