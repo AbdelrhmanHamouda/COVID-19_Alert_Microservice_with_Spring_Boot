@@ -37,6 +37,11 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
 - Spring boot
 - JSONiJ for parsing json
     - https://bitbucket.org/jmarsden/jsonij/wiki/Home
+    - To get the version needed
+      - Go to: https://jar-download.com/artifacts/cc.plural/jsonij/0.5.2
+      - Search needed version
+      - Click ```</>show build tool code```
+      - Click ```Gradle```
     - gradle dependencies
       ```
       dependencies {
