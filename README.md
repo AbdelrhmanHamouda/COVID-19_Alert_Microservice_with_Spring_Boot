@@ -11,4 +11,6 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
 ```
 
 # Basic Microservice Architecture
+I have modified the architecture from the original author to work with any country and region.  
+However, this provides a basic overview of the microservice.
 ![img.png](microserviceArchitecture-GreenLearner.png)
