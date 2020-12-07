@@ -8,7 +8,7 @@ The current implementation allows providing a ```country``` name and a ```state`
 - Request: GET
 - Path variables: ```/{country}/{state} ```     
 
-###Usage example
+#### Usage example
 http://localhost:9090/status/Germany/Berlin
 
 # Data source
