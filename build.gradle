@@ -13,8 +13,11 @@ repositories {
 }
 
 dependencies {
+	//implementation 'cc.plural:jsonij:0.5.2'
+	compile group: 'cc.plural', name: 'jsonij', version: '0.5.2'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 test {
