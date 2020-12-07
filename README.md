@@ -14,7 +14,7 @@ measures recommendation based on the current number of new cases in that region.
 
 #### Usage example
 
-http://localhost:9090/status/Germany/Berlin
+http://localhost:9090/status/Germany/Berlin/2020-12-04
 
 # Data source
 
