@@ -4,8 +4,8 @@ A Spring Boot microservice to provide alerts based on location.
 
 # Current Implementation
 
-The current implementation allows providing a ```country``` name, a ```state``` name and a specific ```date```. The returned result, will be a
-measures recommendation based on the current number of new cases in that region.
+The current implementation allows providing a ```country``` name, a ```state``` name and a specific ```date```. The
+returned result, will be a measures recommendation based on the current number of new cases in that region.
 
 - Port: 9090
 - Endpoint: ```/status/```
@@ -14,7 +14,7 @@ measures recommendation based on the current number of new cases in that region.
 
 #### Usage example
 
-http://localhost:9090/status/Germany/Berlin/2020-12-04
+http://localhost:9090/status/Germany/Berlin
 
 # Data source
 
@@ -38,10 +38,10 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
 - JSONiJ for parsing json
     - https://bitbucket.org/jmarsden/jsonij/wiki/Home
     - To get the version needed
-      - Go to: https://jar-download.com/artifacts/cc.plural/jsonij/0.5.2
-      - Search needed version
-      - Click ```</>show build tool code```
-      - Click ```Gradle```
+        - Go to: https://jar-download.com/artifacts/cc.plural/jsonij/0.5.2
+        - Search needed version
+        - Click ```</>show build tool code```
+        - Click ```Gradle```
     - gradle dependencies
       ```
       dependencies {
@@ -56,7 +56,7 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
         import jsonij.parser.ParserException;
         
         public class json {
-            public static void main(String[] arg) throws ParserException {
+            public static void main(String[] arg){
                 // Create a new parser object
                 JSONParser parser = new JSONParser();
                 // Mock a jason response from a REST endpoint
@@ -72,3 +72,18 @@ https://api.covid19tracking.narrativa.com/api/2020-11-07/country/egypt/region/ca
             }
         }
       ```
+
+# Setup logging
+
+In order to the level correctly, take the path from the ```root``` and use ```.``` as a separator till you reach the
+package name.  
+Levels:
+``` TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF``` .
+
+In the ```application.yaml``` file add the following:
+
+```yaml
+logging:
+  level:
+    com.nexthink.mnt.covidalertservice.service: DEBUG
+```

@@ -13,7 +13,7 @@ public class CovidAlertServiceApplication {
 		SpringApplication.run(CovidAlertServiceApplication.class, args);
 	}
 
-	// TODO use logger
+
 	@Bean
 	RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();

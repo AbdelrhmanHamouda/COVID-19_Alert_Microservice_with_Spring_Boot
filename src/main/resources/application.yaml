@@ -1,6 +1,9 @@
 server:
   port: 9090
 
+logging:
+  level:
+    com.nexthink.mnt.covidalertservice.service: DEBUG
 
 spring:
   application:
