@@ -6,7 +6,7 @@ The current implementation allows providing a ```country``` name and a ```state`
 - Port: 9090
 - Endpoint: ```/status/```
 - Request: GET
-- Path variables: ```/{country}/{state} ```
+- Path variables: ```/{country}/{state} ```  
 ####Usage example
 http://localhost:9090/status/Germany/Berlin
 
