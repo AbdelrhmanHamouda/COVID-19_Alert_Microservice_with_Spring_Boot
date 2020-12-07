@@ -22,9 +22,9 @@ public class AlertController {
     @Autowired
     private AlertService alertService;
 
-    @GetMapping("/{country}/{state}")
-    AlertStatus getAlertAboutState(@PathVariable String country, @PathVariable String state) throws ParserException {
+    @GetMapping("/{country}/{state}/{date}")
+    AlertStatus getAlertAboutState(@PathVariable String country, @PathVariable String state, @PathVariable String date) throws ParserException {
         // Passing the call to the service because no business logic should be down inside the controller.
-        return alertService.getAlertAboutState(country, state);
+        return alertService.getAlertAboutState(country, state, date);
     }
 }

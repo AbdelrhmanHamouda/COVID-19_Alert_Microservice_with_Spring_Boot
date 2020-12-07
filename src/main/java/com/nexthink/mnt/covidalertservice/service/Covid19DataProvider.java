@@ -12,13 +12,13 @@ import org.springframework.web.client.RestTemplate;
 public class Covid19DataProvider {
 
 
-    String apiUrl = "https://fxs6l35t9e.execute-api.eu-west-3.amazonaws.com/pro/api/2020-12-06/";
+    String apiUrl = "https://fxs6l35t9e.execute-api.eu-west-3.amazonaws.com/pro/api/";
 
     // This will be used to send requests to the api
     @Autowired
     RestTemplate restTemplate;
 
-    public String getCountryAndStateData(String country, String state, String dataField) throws ParserException {
+    public String getCountryAndStateData(String country, String state, String dataField, String date) throws ParserException {
         // Provide a default value for dataField if it was passed as null
         dataField = dataField != null ? dataField : "today_confirmed";
         // Init return value
@@ -26,7 +26,7 @@ public class Covid19DataProvider {
         // Init the Jason parser
         JSONParser parser = new JSONParser();
         // Update URL with selected country and state
-        String countryAndStateEndpoint = "country/" + country + "/region/" + state;
+        String countryAndStateEndpoint = date + "/country/" + country + "/region/" + state;
         // Finalize Request url
         String requestUrl = apiUrl + countryAndStateEndpoint;
         // Get the API response and store it in a string
@@ -40,15 +40,13 @@ public class Covid19DataProvider {
         // Get region data
         if (dataField.equals("all")) {
             // Provide all received data
-            regionData = jsonBody.get("dates").get("2020-12-06").get("countries").get(country).get("regions").get(0);
-            // ? For debug
-            System.out.println("Returned data is " + regionData);
+            regionData = jsonBody.get("dates").get(date).get("countries").get(country).get("regions").get(0);
         } else {
             // Provide specific data
-            regionData = jsonBody.get("dates").get("2020-12-06").get("countries").get(country).get("regions").get(0).get(dataField);
-            // ? For debug
-            System.out.println("Returned data is " + regionData);
+            regionData = jsonBody.get("dates").get(date).get("countries").get(country).get("regions").get(0).get(dataField);
         }
+        // ? For debug
+        System.out.println("Returned data is " + regionData);
         return String.valueOf(regionData);
 
 
