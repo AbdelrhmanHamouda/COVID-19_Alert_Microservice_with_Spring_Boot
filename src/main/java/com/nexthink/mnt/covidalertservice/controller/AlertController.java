@@ -6,12 +6,15 @@ package com.nexthink.mnt.covidalertservice.controller;
 
 import com.nexthink.mnt.covidalertservice.service.AlertService;
 import com.nexthink.mnt.covidalertservice.dto.AlertStatus;
+import jsonij.parser.ParserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/status/")
 public class AlertController {
 
     // @Autowired allows Spring to resolve and inject collaborating beans into our bean
@@ -19,8 +22,8 @@ public class AlertController {
     @Autowired
     private AlertService alertService;
 
-    @GetMapping("/status/{country}/{state}")
-    AlertStatus getAlertAboutState(@PathVariable String country, @PathVariable String state) {
+    @GetMapping("/{country}/{state}")
+    AlertStatus getAlertAboutState(@PathVariable String country, @PathVariable String state) throws ParserException {
         // Passing the call to the service because no business logic should be down inside the controller.
         return alertService.getAlertAboutState(country, state);
     }
