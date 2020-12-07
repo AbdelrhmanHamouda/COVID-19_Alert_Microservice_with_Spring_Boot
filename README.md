@@ -4,13 +4,13 @@ A Spring Boot microservice to provide alerts based on location.
 
 # Current Implementation
 
-The current implementation allows providing a ```country``` name and a ```state``` name. The returned result, will be a
+The current implementation allows providing a ```country``` name, a ```state``` name and a specific ```date```. The returned result, will be a
 measures recommendation based on the current number of new cases in that region.
 
 - Port: 9090
 - Endpoint: ```/status/```
 - Request: GET
-- Path variables: ```/{country}/{state} ```
+- Path variables: ```/{country}/{state}/{YYYY-MM-DD}/ ```
 
 #### Usage example
 
