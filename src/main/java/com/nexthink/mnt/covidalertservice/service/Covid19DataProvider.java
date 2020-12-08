@@ -27,7 +27,7 @@ public class Covid19DataProvider {
         dataField = dataField != null ? dataField : "today_confirmed";
         // Init return value
         Value regionData;
-        // Init the Jason parser
+        // Init the Json parser
         JSONParser parser = new JSONParser();
         // Update URL with selected country and state
         String countryAndStateEndpoint = date + "/country/" + country + "/region/" + state;
